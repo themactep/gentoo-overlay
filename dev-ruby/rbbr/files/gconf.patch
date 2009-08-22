@@ -1,0 +1,11 @@
+--- lib/rbbr/ui/gtk/confmanager.rb
++++ lib/rbbr/ui/gtk/confmanager.rb
+@@ -25,7 +25,7 @@
+     class GConfDataStore
+       APP_DIR = "/apps/rbbr/"
+       def initialize
+-        @client = GConf::Client.new
++        @client = GConf::Client.default
+         @client["/test"]
+       end
+       def [](key)

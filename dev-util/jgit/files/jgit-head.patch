@@ -1,0 +1,17 @@
+--- make_jgit.sh.orig	2009-08-23 02:06:58.000000000 +0700
++++ make_jgit.sh	2009-08-23 02:07:52.000000000 +0700
+@@ -53,13 +53,7 @@
+ cleanup_bin
+ rm -f $O_CLI $O_JAR $O_SRC $O_DOC
+ 
+-VN=`git describe --abbrev=4 HEAD 2>/dev/null`
+-git update-index -q --refresh
+-if [ -n "`git diff-index --name-only HEAD --`" ]
+-then
+-	VN="$VN-dirty"
+-fi
+-VN=${VN:-untagged}`echo "$VN" | sed -e s/-/./g`
++VN='HEAD'
+ 
+ CLASSPATH=
+ for j in $JARS

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Ruby API Browser
+GenericName=Ruby API Browser
+Comment=Ruby Gem Documentation viewer
+Exec=rbbr
+Icon=rbbr
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=Development;Documentation
+Encoding=UTF-8
+StartupNotify=true
