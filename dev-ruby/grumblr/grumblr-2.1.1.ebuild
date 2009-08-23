@@ -46,7 +46,7 @@ src_install() {
     doins data/${PN}.desktop || die "Installing launcher failed."
 
     insinto /usr/share/pixmaps
-    doins images/${PN}.svg || die "Installing icon failed."
+    doins data/${PN}.svg || die "Installing icon failed."
 
     dobin bin/${PN}
     dodoc README LICENSE || die "Installing docs failed."
