@@ -22,7 +22,8 @@ USE_RUBY="ruby18"
 
 RDEPEND="dev-ruby/ruby-gtk2
     dev-ruby/ruby-gconf2
-    dev-ruby/libxml"
+    dev-ruby/libxml
+    dev-ruby/ppds-libs"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}"
