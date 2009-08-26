@@ -26,6 +26,5 @@ src_install() {
     gems_src_install
     gems_location 
     doicon ${D}/${GEMSDIR}/gems/${P}/data/pixmaps/${PN}.svg
-#    doicon ${FILESDIR}/${PN}.svg
     make_desktop_entry ${PN} "Grumblr Tumblr companion" "${PN}.svg" "Network"
 }
