@@ -1,0 +1,14 @@
+--- libgtkhtml/src/Makefile.1	2009-09-03 23:51:47.000000000 +0700
++++ libgtkhtml/src/Makefile	2009-09-03 23:52:05.000000000 +0700
+@@ -162,4 +162,4 @@
+ 
+ ###
+ install:
+-	$(INSTALL_DATA) ../libgtkhtml-2.0-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../libgtkhtml-2.0-ruby.pc -D $(libdir)/pkgconfig/libgtkhtml-2.0-ruby.pc
+--- libgtkhtml/src/depend.1	2009-09-03 23:52:08.000000000 +0700
++++ libgtkhtml/src/depend	2009-09-03 23:52:17.000000000 +0700
+@@ -1,2 +1,2 @@
+ install:
+-	$(INSTALL_DATA) ../libgtkhtml-2.0-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../libgtkhtml-2.0-ruby.pc -D $(libdir)/pkgconfig/libgtkhtml-2.0-ruby.pc

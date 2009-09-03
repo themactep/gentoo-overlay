@@ -1,0 +1,14 @@
+--- goocanvas/src/Makefile	2009-07-26 13:43:43.000000000 +0700
++++ goocanvas/src/Makefile	2009-09-03 19:32:32.000000000 +0700
+@@ -162,4 +162,4 @@
+ 
+ ###
+ install:
+-	$(INSTALL_DATA) ../goocanvas-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../goocanvas-ruby.pc -D $(libdir)/pkgconfig/goocanvas-ruby.pc
+--- goocanvas/src/depend	2009-07-26 13:16:54.000000000 +0700
++++ goocanvas/src/depend	2009-09-03 19:32:46.000000000 +0700
+@@ -1,2 +1,2 @@
+ install:
+-	$(INSTALL_DATA) ../goocanvas-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../goocanvas-ruby.pc -D $(libdir)/pkgconfig/goocanvas-ruby.pc

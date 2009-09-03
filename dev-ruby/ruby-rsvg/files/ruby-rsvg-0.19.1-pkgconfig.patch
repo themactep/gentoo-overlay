@@ -1,0 +1,14 @@
+--- rsvg/src/Makefile	2009-07-26 13:44:00.000000000 +0700
++++ rsvg/src/Makefile	2009-09-04 01:58:37.000000000 +0700
+@@ -162,4 +162,4 @@
+
+ ###
+ install:
+-	$(INSTALL_DATA) ../librsvg-2.0-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../librsvg-2.0-ruby.pc -D $(libdir)/pkgconfig/librsvg-2.0-ruby.pc
+--- rsvg/src/depend	2009-07-26 13:16:35.000000000 +0700
++++ rsvg/src/depend	2009-09-04 01:58:47.000000000 +0700
+@@ -1,2 +1,2 @@
+ install:
+-	$(INSTALL_DATA) ../librsvg-2.0-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../librsvg-2.0-ruby.pc -D $(libdir)/pkgconfig/librsvg-2.0-ruby.pc

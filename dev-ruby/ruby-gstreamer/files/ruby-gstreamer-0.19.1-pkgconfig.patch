@@ -1,0 +1,14 @@
+--- gstreamer/src/Makefile	2009-07-26 13:43:40.000000000 +0700
++++ gstreamer/src/Makefile	2009-09-04 01:38:24.000000000 +0700
+@@ -162,4 +162,4 @@
+
+ ###
+ install:
+-	$(INSTALL_DATA) ../gstreamer-0.10-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../gstreamer-0.10-ruby.pc -D $(libdir)/pkgconfig/gstreamer-0.10-ruby.pc
+--- gstreamer/src/depend	2009-07-26 13:16:54.000000000 +0700
++++ gstreamer/src/depend	2009-09-04 01:38:34.000000000 +0700
+@@ -1,2 +1,2 @@
+ install:
+-	$(INSTALL_DATA) ../gstreamer-0.10-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../gstreamer-0.10-ruby.pc -D $(libdir)/pkgconfig/gstreamer-0.10-ruby.pc

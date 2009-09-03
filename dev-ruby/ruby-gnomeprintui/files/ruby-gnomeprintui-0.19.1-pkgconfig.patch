@@ -1,0 +1,14 @@
+--- gnomeprintui/src/Makefile.1	2009-09-03 22:21:59.000000000 +0700
++++ gnomeprintui/src/Makefile	2009-09-03 22:22:25.000000000 +0700
+@@ -162,4 +162,4 @@
+ 
+ ###
+ install:
+-	$(INSTALL_DATA) ../libgnomeprintui-2.2-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../libgnomeprintui-2.2-ruby.pc -D $(libdir)/pkgconfig/libgnomeprintui-2.2-ruby.pc
+--- gnomeprintui/src/depend.1	2009-09-03 22:22:02.000000000 +0700
++++ gnomeprintui/src/depend	2009-09-03 22:22:38.000000000 +0700
+@@ -1,2 +1,2 @@
+ install:
+-	$(INSTALL_DATA) ../libgnomeprintui-2.2-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../libgnomeprintui-2.2-ruby.pc -D $(libdir)/pkgconfig/libgnomeprintui-2.2-ruby.pc

@@ -1,0 +1,14 @@
+--- gtksourceview2/src/Makefile.orig	2009-09-04 01:19:20.000000000 +0700
++++ gtksourceview2/src/Makefile	2009-09-04 01:19:56.000000000 +0700
+@@ -162,4 +162,4 @@
+
+ ###
+ install:
+-	$(INSTALL_DATA) ../gtksourceview-2.0-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../gtksourceview-2.0-ruby.pc -D $(libdir)/pkgconfig/gtksourceview-2.0-ruby.pc
+--- gtksourceview2/src/depend.orig	2009-09-04 01:19:28.000000000 +0700
++++ gtksourceview2/src/depend	2009-09-04 01:20:16.000000000 +0700
+@@ -1,2 +1,2 @@
+ install:
+-	$(INSTALL_DATA) ../gtksourceview-2.0-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../gtksourceview-2.0-ruby.pc -D $(libdir)/pkgconfig/gtksourceview-2.0-ruby.pc

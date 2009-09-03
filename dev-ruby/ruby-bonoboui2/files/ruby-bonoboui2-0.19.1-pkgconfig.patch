@@ -1,0 +1,17 @@
+--- bonoboui/src/Makefile.1	2009-09-03 20:01:59.000000000 +0700
++++ bonoboui/src/Makefile	2009-09-03 20:02:28.000000000 +0700
+@@ -162,7 +162,7 @@
+ 
+ ###
+ install:
+-	$(INSTALL_DATA) ../libbonoboui-2.0-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../libbonoboui-2.0-ruby.pc -D $(libdir)/pkgconfig/libbonoboui-2.0-ruby.pc
+ rbbonobo-dock.o: rbbonobo-dock.c rbbonoboui.h
+ rbbonobo-dock-band.o: rbbonobo-dock-band.c rbbonoboui.h
+ rbbonobo-ui-main.o: rbbonobo-ui-main.c rbbonoboui.h
+--- bonoboui/src/depend.1	2009-09-03 20:04:07.000000000 +0700
++++ bonoboui/src/depend	2009-09-03 20:08:45.000000000 +0700
+@@ -1,2 +1,2 @@
+ install:
+-	$(INSTALL_DATA) ../libbonoboui-2.0-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../libbonoboui-2.0-ruby.pc -D $(libdir)/pkgconfig/libboboboui-2.0-ruby.pc

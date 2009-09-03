@@ -1,0 +1,16 @@
+--- gnomeprint/src/Makefile	2009-07-26 13:44:08.000000000 +0700
++++ gnomeprint/src/Makefile	2009-09-03 21:17:54.000000000 +0700
+@@ -165,4 +165,4 @@
+ 	$(INSTALL_DATA) rblibgnomeprintversion.h $(RUBYARCHDIR)
+ 
+ install:
+-	$(INSTALL_DATA) ../libgnomeprint-2.2-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../libgnomeprint-2.2-ruby.pc -D $(libdir)/pkgconfig/libgnomeprint-2.2-ruby.pc
+--- gnomeprint/src/depend	2009-07-26 13:16:54.000000000 +0700
++++ gnomeprint/src/depend	2009-09-03 21:18:18.000000000 +0700
+@@ -2,4 +2,4 @@
+ 	$(INSTALL_DATA) rblibgnomeprintversion.h $(RUBYARCHDIR)
+ 
+ install:
+-	$(INSTALL_DATA) ../libgnomeprint-2.2-ruby.pc $(libdir)/pkgconfig
++	$(INSTALL_DATA) ../libgnomeprint-2.2-ruby.pc -D $(libdir)/pkgconfig/libgnomeprint-2.2-ruby.pc
