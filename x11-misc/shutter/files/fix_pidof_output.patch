@@ -1,0 +1,34 @@
+--- bin/shutter.orig	2009-09-13 06:20:24.000000000 +0700
++++ bin/shutter	2009-09-13 06:22:19.000000000 +0700
+@@ -6029,6 +6029,7 @@
+ 				#is there already a process of shutter running?
+ 				my @shutter_pids = `pidof -o $$ -x $shutter_path`;
+ 				foreach (@shutter_pids) {
++					next if /^$/;
+ 					kill RTMAX => $_;
+ 					die;
+ 				}
+@@ -6039,6 +6040,7 @@
+ 				#is there already a process of shutter running?
+ 				my @shutter_pids = `pidof -o $$ -x $shutter_path`;
+ 				foreach (@shutter_pids) {
++					next if /^$/;
+ 					kill RTMIN => $_;
+ 					die;
+ 				}
+@@ -6049,6 +6051,7 @@
+ 				#is there already a process of shutter running?
+ 				my @shutter_pids = `pidof -o $$ -x $shutter_path`;
+ 				foreach (@shutter_pids) {
++					next if /^$/;
+ 					kill USR2 => $_;
+ 					die;
+ 				}
+@@ -6059,6 +6062,7 @@
+ 				#is there already a process of shutter running?
+ 				my @shutter_pids = `pidof -o $$ -x $shutter_path`;
+ 				foreach (@shutter_pids) {
++					next if /^$/;
+ 					kill USR1 => $_;
+ 					die;
+ 				}
