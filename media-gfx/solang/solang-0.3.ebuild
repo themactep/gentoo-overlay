@@ -5,7 +5,7 @@
 EAPI="2"
 
 DESCRIPTION="A photo manager for GNOME"
-HOMEPAGE="http://santanu-sinha.blogspot.com/2009/06/solang.html"
+HOMEPAGE="https://savannah.nongnu.org/projects/solang"
 SRC_URI="http://rishi.fedorapeople.org/solang/${P}.tar.gz"
 
 LICENSE="GPL"
