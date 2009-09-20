@@ -13,12 +13,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="
-	>=x11-libs/gtk+-2.12
+DEPEND=">=x11-libs/gtk+-2.12
 	>=dev-libs/glib-2.14
 	>=gnome-base/nautilus-2.16
 	>=x11-libs/libnotify-0.4.4
-	dev-python/docutils
-"
+	dev-python/docutils"
 RDEPEND="${DEPEND}"
 
+src_install() {
+        emake DESTDIR="${D}" install || die "install failed"
+}
