@@ -18,3 +18,6 @@ DEPEND=">=net-misc/curl-7.10.0
 	>=media-libs/raptor-1.4.0"
 RDEPEND="${DEPEND}"
 
+src_install() {
+        emake DESTDIR="${D}" install || die "install failed"
+}
