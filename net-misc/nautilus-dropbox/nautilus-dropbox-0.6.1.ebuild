@@ -10,7 +10,7 @@ SRC_URI="http://www.getdropbox.com/download?dl=packages/${P}.tar.bz2"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=x11-libs/gtk+-2.12
