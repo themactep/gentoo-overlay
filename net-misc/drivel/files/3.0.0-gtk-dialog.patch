@@ -1,0 +1,116 @@
+--- src/blog_lj.c.ori	2009-10-04 04:04:21.000000000 +0700
++++ src/blog_lj.c	2009-10-04 04:06:30.000000000 +0700
+@@ -252,6 +252,7 @@
+ 			GTK_DIALOG_DESTROY_WITH_PARENT,
+ 			GTK_MESSAGE_INFO,
+ 			GTK_BUTTONS_OK,
++			"%s",
+ 			message);
+ 		
+ 		gtk_dialog_run (GTK_DIALOG (dialog));
+--- src/dialogs.c	2009-09-25 15:30:01.000000000 +0700
++++ src/dialogs.c.new	2009-10-04 04:42:31.000000000 +0700
+@@ -1313,28 +1313,25 @@
+ {
+ 	GtkWidget *dialog;
+ 	gint response;
+-	gchar *msg;
+ 	gboolean cancel;
+ 
+ 	if (!dc || !dc->journal_window || !dc->modified)
+ 		return TRUE;
+ 
+-	msg = g_strdup_printf ("<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s",
+-			_("Save the content of this journal entry instead of clearing?"),
+-			_("If you don't save, content of this entry will be discarded."));
+ 	dialog = gtk_message_dialog_new_with_markup (
+ 			GTK_WINDOW (dc->current_window),
+ 			GTK_DIALOG_DESTROY_WITH_PARENT,
+ 			GTK_MESSAGE_WARNING,
+ 			GTK_BUTTONS_NONE,
+-			msg);
++			"<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s",
++			_("Save the content of this journal entry instead of clearing?"),
++			_("If you don't save, content of this entry will be discarded."));
+ 	gtk_dialog_add_buttons (GTK_DIALOG (dialog), GTK_STOCK_NO,
+ 			GTK_RESPONSE_REJECT,
+ 			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE,
+ 			GTK_RESPONSE_ACCEPT,
+ 			NULL);
+ 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
+-	g_free (msg);
+ 
+ 	response = gtk_dialog_run (GTK_DIALOG (dialog));
+ 	cancel = parse_save_response (dc, response);
+@@ -1349,28 +1346,25 @@
+ {
+ 	GtkWidget *dialog;
+ 	gint response;
+-	gchar *msg;
+ 	gboolean cancel;
+ 
+ 	if (!dc || !dc->journal_window || !dc->modified)
+ 		return TRUE;
+ 
+-	msg = g_strdup_printf ("<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s",
+-			_("Save changes to this journal entry before closing?"),
+-			_("If you don't save, changes to this entry will be discarded."));
+ 	dialog = gtk_message_dialog_new_with_markup (
+ 			GTK_WINDOW (dc->current_window),
+ 			GTK_DIALOG_DESTROY_WITH_PARENT,
+ 			GTK_MESSAGE_WARNING,
+ 			GTK_BUTTONS_NONE,
+-			msg);
++			"<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s",
++			_("Save changes to this journal entry before closing?"),
++			_("If you don't save, changes to this entry will be discarded."));
+ 	gtk_dialog_add_buttons (GTK_DIALOG (dialog),
+ 			GTK_STOCK_NO, GTK_RESPONSE_REJECT,
+ 			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+ 			GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+ 			NULL);
+ 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
+-	g_free (msg);
+ 
+ 	response = gtk_dialog_run (GTK_DIALOG (dialog));
+ 	cancel = parse_save_response (dc, response);
+--- src/main.c	2009-09-08 20:34:34.000000000 +0700
++++ src/main.c.new	2009-10-04 04:46:16.000000000 +0700
+@@ -50,7 +50,7 @@
+ display_error_dialog (DrivelClient *dc, const gchar *header, const gchar *mesg)
+ {
+ 	GtkWidget *dialog;
+-	gchar *error_header, *error_mesg, *error_string;
++	gchar *error_header, *error_mesg;
+ 
+ 	if (header)
+ 		error_header = g_strdup (header);
+@@ -63,9 +63,6 @@
+ 		error_mesg = g_strdup (
+ 				_("Oh bother, there's a server error.  Please try again later."));
+ 
+-	error_string = g_strdup_printf ("<span weight=\"bold\" size=\"larger\">"
+-			"%s</span>\n\n%s", error_header, error_mesg);
+-
+ 	if (dc->current_window)
+ 	{
+ 		dialog = gtk_message_dialog_new_with_markup (
+@@ -73,7 +70,9 @@
+ 				GTK_DIALOG_DESTROY_WITH_PARENT,
+ 				GTK_MESSAGE_ERROR,
+ 				GTK_BUTTONS_CLOSE,
+-				error_string);
++				"<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s",
++				error_header,
++				error_mesg);
+ 
+ 		gtk_dialog_run (GTK_DIALOG (dialog));
+ 
+@@ -84,7 +83,6 @@
+ 
+ 	g_free (error_header);
+ 	g_free (error_mesg);
+-	g_free (error_string);
+ 
+ 	return;
+ }
