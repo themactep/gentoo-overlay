@@ -35,12 +35,6 @@ RDEPEND="${CDEPEND}
 	gnome? ( dev-python/gconf-python )
 	network? ( || ( net-dns/dnsmasq =net-misc/dhcp-3* ) )"
 
-#src_unpack() {
-#	unpack ${A}
-#	cd "${S}"
-#	epatch ${FILESDIR}/${PV}-send-dialog.ui.patch
-#}
-
 src_prepare() {
 	# disable pyc compiling
 	rm py-compile
