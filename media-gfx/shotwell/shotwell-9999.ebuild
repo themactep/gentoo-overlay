@@ -35,8 +35,7 @@ src_unpack() {
 }
 
 src_install() {
-	./configure --prefix=/usr  --disable-desktop-update --disable-schemas-install 
-	# --disable-icon-update
+	./configure --prefix=/usr --disable-desktop-update --disable-schemas-install 
 	make DESTDIR="${D}" install || die "make install failed"
 }
 
