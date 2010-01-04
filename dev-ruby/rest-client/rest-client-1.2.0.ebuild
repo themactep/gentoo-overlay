@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-USE_RUBY="ruby18 ruby19"
-DEPEND=""
-RDEPEND="${DEPEND}"
-
+USE_RUBY="ruby18"
+RDEPEND=">=dev-ruby/mime-types-1.16"
+DEPEND="${RDEPEND}"
