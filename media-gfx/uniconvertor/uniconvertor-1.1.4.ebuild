@@ -6,6 +6,8 @@ EAPI="2"
 
 inherit distutils
 
+MY_P="UniConvertor"
+
 DESCRIPTION="UniConvertor is a universal vector graphics translator."
 HOMEPAGE="http://sk1project.org/"
 SRC_URI="http://sk1project.org/downloads/${PN}/v${PV}/${P}.tar.gz"
@@ -15,7 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="virtual/python"
+DEPEND="virtual/python
+		dev-python/imaging"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/UniConvertor-${PV}"
+S="${WORKDIR}/${MY_P}-${PV}"
+
