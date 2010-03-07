@@ -56,7 +56,7 @@ src_install() {
 	insinto $(${RUBY} -r rbconfig -e 'print Config::CONFIG["sitedir"]')/../gems/1.8/specifications
 	newins searchlogic.gemspec ${P}.gemspec || die "Unable to install fake gemspec"
 
-	dodoc CHANGELOG.rdoc README.rdoc || die "Installing docs failed."
+	dodoc README.rdoc || die "Installing docs failed."
 
 	if use doc; then
 		pushd doc
