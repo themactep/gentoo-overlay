@@ -6,7 +6,7 @@ EAPI="2"
 
 inherit gems
 
-DESCRIPTION="A simple REST client for Ruby, inspired by the Sinatra microframework style of specifying actions: get, put, post, delete."
+DESCRIPTION="A simple REST client for Ruby"
 HOMEPAGE="http://rest-client.heroku.com/"
 
 LICENSE="MIT"
