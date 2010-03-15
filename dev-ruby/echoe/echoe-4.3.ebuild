@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,8 +24,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-ruby_add_rdepend "dev-ruby/highline"
+ruby_add_rdepend "dev-ruby/highline dev-ruby/rubyforge"
 
 all_ruby_prepare() {
-	epatch "${FILESDIR}"/${P}-optional-gemcutter.patch
+	epatch "${FILESDIR}"/${PN}-4.0-optional-gemcutter.patch
 }
