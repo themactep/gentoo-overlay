@@ -6,12 +6,9 @@ EAPI=2
 
 USE_RUBY="ruby18"
 
-RUBY_FAKEGEM_EXTRAINSTALL="vendor"
-
-# doc regeneration seem to need Jeweler, which is not currently
-# available
+#RUBY_FAKEGEM_EXTRAINSTALL="vendor"
+# doc regeneration seem to need Jeweler, which is not currently available
 RUBY_FAKEGEM_TASK_DOC=""
-
 RUBY_FAKEGEM_EXTRADOC="README.textile CHANGELOG.textile"
 
 inherit ruby-fakegem versionator
