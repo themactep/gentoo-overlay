@@ -1,0 +1,10 @@
+--- ruby-gnome2-all-0.19.3/gtkmozembed/extconf.rb.orig	2009-09-23 00:43:01.000000000 +0000
++++ ruby-gnome2-all-0.19.3/gtkmozembed/extconf.rb	2010-03-31 23:10:28.000000000 +0000
+@@ -58,6 +58,7 @@
+ add_depend_package("gtk2", "gtk/src", TOPDIR)
+ 
+ if have_library("xpcomglue")
++  $CFLAGS << " -DXPCOM_GLUE"
+   have_header("gtkmozembed_glue.cpp") or exit 1
+   CONFIG['LDSHARED'].gsub!(/\$\(CC\)/, "$(CXX)")
+ elsif have_library("gtkembedmoz")
